@@ -7,6 +7,7 @@ import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.AsyncPlayerChatEvent;
+import org.bukkit.event.server.BroadcastMessageEvent;
 import sh.charlie.chitchat.ChitChatPlugin;
 
 import java.util.Arrays;
@@ -67,7 +68,7 @@ public class ChatListener implements Listener {
                 miniStr = new StringBuilder(PlaceholderAPI.setPlaceholders(e.getPlayer(), miniStr.toString()));
             }
 
-            plugin.getAdventure().player(e.getPlayer()).sendMessage(miniMessage.parse(miniStr.toString()));
+            plugin.getAdventure().all().sendMessage(miniMessage.parse(miniStr.toString()));
             break;
         }
     }
