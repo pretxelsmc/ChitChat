@@ -31,11 +31,11 @@ dependencies {
 group = "sh.charlie"
 version = "1.0.0"
 description = "ChitChat"
-java.sourceCompatibility = JavaVersion.VERSION_16
+java.sourceCompatibility = JavaVersion.VERSION_1_8
 
 val shadowJar: ShadowJar by tasks
 shadowJar.apply {
-    destinationDirectory.set(File("/Users/charlie/Documents/MCServer/plugins"))
+    destinationDirectory.set(File("~/Desktop"))
 }
 
 tasks.withType<ProcessResources> {
