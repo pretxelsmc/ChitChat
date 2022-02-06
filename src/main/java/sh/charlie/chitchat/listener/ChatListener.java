@@ -27,7 +27,7 @@ public class ChatListener implements Listener {
         Player player = e.getPlayer();
         e.setCancelled(true);
 
-        List<String> formats = plugin.getFormats().stream().sorted(Comparator.comparing(item -> plugin.getConfig().getInt("formats." + item + ".priority"))).toList();
+        List<String> formats = plugin.getFormats().stream().sorted(Comparator.comparing(item -> plugin.getConfig().getInt("formats." + item + ".priority"))).collect(Collectors.toList());
 
         for (String format : formats) {
             if(!format.equals("default") && !player.hasPermission("chatformat." + format)) continue;
